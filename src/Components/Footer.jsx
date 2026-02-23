@@ -1,103 +1,93 @@
-import React from "react";
-import { FaBehance, FaFacebookF } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
-import { BsArrowUpRight, BsInstagram, BsCCircle } from "react-icons/bs";
+import React, { useEffect, useState } from 'react';
 
 const Footer = () => {
-  let year = new Date().getFullYear();
-  return (
-    <footer className="bg-stone-900 dark:bg-gradient-to-b from-stone-900 to-black h-fit p-4 relative sm:pt-8 flex flex-col lg:gap-16 md:gap-4">
-      <div className="grid xxxs:grid-rows-2  xxxs:grid-cols-2 md:grid-rows-1 md:grid-cols-3 gap-3 p-2 mb-6 items-end">
-        <nav className="xxs:col-span-1 xxs:row-span-1">
-          <ul className=" flex flex-col md:gap-2 sm:pl-5 xxxs:max-md:items-center">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => {
-                  return isActive
-                    ? "hidden"
-                    : "font-blacker_cond_med flex items-center gap-1 text-gray-200 text-xl sm:text-2xl md:text-3xl";
-                }}
-              >
-                Home{" "}
-                <BsArrowUpRight className="text-orangered text-vs md:text-lg" />
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/menu"
-                className={({ isActive }) => {
-                  return isActive
-                    ? "hidden"
-                    : "font-blacker_cond_med flex items-center gap-1 text-gray-200 text-xl sm:text-2xl md:text-3xl";
-                }}
-              >
-                Menu{" "}
-                <BsArrowUpRight className="text-orangered text-vs md:text-lg" />
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) => {
-                  return isActive
-                    ? "hidden"
-                    : "font-blacker_cond_med flex items-center gap-1 text-gray-200 text-xl sm:text-2xl md:text-3xl";
-                }}
-              >
-                Contact{" "}
-                <BsArrowUpRight className="text-orangered text-vs md:text-lg" />
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+    const [kitchenStatus, setKitchenStatus] = useState(true);
 
-        <nav className="xxxs:col-start-2 xxxs:col-span-1 xxxs:row-span-1">
-          <ul className="flex gap-1.5 flex-col items-start justify-end sm:max-md:items-center">
-            <li>
-              <a
-                href=""
-                className="flex items-center xxxs:max-xs:text-vs md:text-sm gap-2 text-gray-300 font-Josefin_bold"
-              >
-                <FaFacebookF className="text-blue-600 md:text-2xl xs:text-xl xxxs:text-lg" />{" "}
-                @Fable Flav'
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className="flex items-center gap-2 text-gray-300 xxxs:max-xs:text-vs xs:text-base md:text-sm font-Josefin_bold"
-              >
-                <BsInstagram className="text-rose-600 md:text-2xl xs:text-xl xxxs:text-lg" />{" "}
-                @Fable Flav' Off
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className="flex items-center gap-2 text-gray-300 xxxs:max-xs:text-vs  md:text-sm font-Josefin_bold"
-              >
-                <FaBehance className="text-gray-400 md:text-2xl xs:text-xl xxxs:text-lg" />{" "}
-                @Fable Flav' Art
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <p className="text-gray-400 leading-4 text-vs font-Josefin_Regular text-center xxxs:max-md:pb-4 md:pb-1.5 xxxs:max-sm:mt-5 sm:max-md:w-percent80  xxxs:col-span-2 xxxs:row-span-1 md:text-left mx-auto md:col-start-3 md:col-span-1 md:row-start-1">
-          <span className="font-Josefin_Regular">
-            <BsCCircle className="inline-block mb-1" />
-          </span>{" "}
-          {year} Fable Flav'. All rights reserved. No part of this website may
-          be used, modified, or distributed without prior written permission
-          from the copyright owner.
-        </p>
-      </div>
+    // Simple hardcoded check for demo purposes
+    useEffect(() => {
+        const hour = new Date().getHours();
+        setKitchenStatus(hour >= 17 && hour < 23); // Open 5PM - 11PM
+    }, []);
 
-      <h1 className="min-[1300px]:text-16xl xl:text-14xl min-[1150px]:text-13xl lg:text-12xl min-[820px]:text-9xl min-[780px]:text-8.5xl min-[685px]:text-8.25xl sm:text-8xl min-[590px]:text-7.5xl xs:text-7xl  min-[450px]:text-6.5xl min-[420px]:text-6xl min-[380px]:text-5.5xl xxxs:text-5xl text-wheat font-montserrat_It_black text-center">
-        Fable Flav'
-      </h1>
-    </footer>
-  );
+    return (
+        <footer className="relative bg-[#111424] text-white pt-16 md:pt-24 pb-8 md:pb-12 mt-12 rounded-t-none md:rounded-t-[4rem] px-5 md:px-16 overflow-hidden">
+
+            {/* Noise overlay specific to the dark footer */}
+            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-overlay" style={{ backgroundImage: 'var(--noise-url)' }}></div>
+
+            <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-8">
+
+                {/* Brand Column */}
+                <div className="col-span-2 md:col-span-4 lg:col-span-5 flex flex-col pr-0 md:pr-4 lg:pr-8 mb-4 md:mb-0">
+                    <h2 className="font-display italic text-3xl md:text-5xl mb-4 md:mb-6">Fable & Flavors</h2>
+                    <p className="font-subheading italic text-white/60 mb-4 md:mb-6 max-w-sm text-sm md:text-base">
+                        A pinch of passion in every dish. Coastal Mediterranean cuisine crafted for lingering evenings.
+                    </p>
+
+                    {/* Kitchen Status Indicator */}
+                    <div className="mt-auto flex items-center gap-3 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/10 premium-shadow">
+                        <div className={`w-2 h-2 rounded-full ${kitchenStatus ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}></div>
+                        <span className="font-mono text-xs tracking-widest uppercase text-white/80">
+                            {kitchenStatus ? 'Kitchen Open' : 'Kitchen Closed'}
+                        </span>
+                    </div>
+                </div>
+
+                {/* Links Column */}
+                <div className="col-span-1 md:col-span-2 lg:col-span-2 flex flex-col gap-3 md:gap-4">
+                    <h3 className="font-mono text-xs md:text-sm tracking-widest mb-2 md:mb-4 text-white/40">EXPLORE</h3>
+                    <a href="/" className="font-body text-sm md:text-base hover:text-accent transition-colors w-fit">Home</a>
+                    <a href="/menu" className="font-body text-sm md:text-base hover:text-accent transition-colors w-fit">Menu</a>
+                    <a href="/contact" className="font-body text-sm md:text-base hover:text-accent transition-colors w-fit">Contact</a>
+                    <a href="/payment" className="font-body text-sm md:text-base hover:text-accent transition-colors w-fit">Reservations</a>
+                </div>
+
+                {/* Contact Column */}
+                <div className="col-span-1 md:col-span-3 lg:col-span-2 flex flex-col gap-3 md:gap-4">
+                    <h3 className="font-mono text-xs md:text-sm tracking-widest mb-2 md:mb-4 text-white/40">VISIT</h3>
+                    <p className="font-body text-white/80 text-sm md:text-base">
+                        123 Azure Coastal Way<br />
+                        Santorini, Greece<br />
+                        84700
+                    </p>
+                    <a href="tel:+1234567890" className="font-body text-sm md:text-base hover:text-accent transition-colors w-fit">+1 (234) 567-890</a>
+                    <a href="mailto:hello@fableflavors.com" className="font-body text-sm md:text-base hover:text-accent transition-colors w-fit break-all md:break-normal">hello@fableflavors.com</a>
+                </div>
+
+                {/* Hours Column */}
+                <div className="col-span-2 md:col-span-3 lg:col-span-3 flex flex-col gap-3 md:gap-4">
+                    <h3 className="font-mono text-xs md:text-sm tracking-widest mb-2 md:mb-4 text-white/40">HOURS</h3>
+                    <div className="font-body text-white/80 text-sm md:text-base flex flex-col gap-2 w-full max-w-[280px] md:max-w-[220px]">
+                        <div className="flex justify-between border-b border-white/10 pb-1">
+                            <span>Mon - Thu</span>
+                            <span>5PM - 11PM</span>
+                        </div>
+                        <div className="flex justify-between border-b border-white/10 pb-1 text-accent">
+                            <span>Fri - Sat</span>
+                            <span>5PM - 12AM</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span>Sunday</span>
+                            <span>4PM - 10PM</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="relative z-10 max-w-7xl mx-auto mt-12 md:mt-20 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="font-mono text-[10px] md:text-xs tracking-widest text-white/40 text-center">
+                    © {new Date().getFullYear()} FABLE & FLAVORS. ALL RIGHTS RESERVED.
+                </p>
+                <div className="flex gap-6">
+                    <a href="#" className="font-mono text-xs tracking-widest text-white/40 hover:text-white transition-colors">INSTAGRAM</a>
+                    <a href="#" className="font-mono text-xs tracking-widest text-white/40 hover:text-white transition-colors">FACEBOOK</a>
+                </div>
+            </div>
+
+        </footer>
+    );
 };
 
 export default Footer;
