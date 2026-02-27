@@ -10,23 +10,22 @@
 </div>
 
 
-
 **Fable Flavors** is a premium, high-end restaurant web application designed with a coastal, elegant aesthetic. Built for the modern culinary industry, it combines sophisticated design with smooth, cinematic animations to create an immersive digital experience equivalent to a fine-dining service.
 
 ---
 
-## ✨ Features
+## Features
 
-- **🌊 Cinematic Visuals**: immersive hero sections with glassmorphism and premium typography.
-- **📜 Curated Menu**: A categorized culinary archive with smooth filtering and scroll-sync navigation.
-- **🖼️ Atmospheric Gallery**: Interactive "Ambiance" displays using smooth scaling and hover effects.
-- **⚡ Performance First**: Built with Vite and React for lightning-fast transitions.
-- **🎭 Motion Design**: Sophisticated entry animations and scroll-triggered reveals powered by GSAP.
-- **📱 Fully Responsive**: A seamless experience tailored for everything from mobile devices to ultra-wide displays.
-- **📬 Reservation System**: Integrated contact and booking calls-to-action throughout the journey.
-- **💳 Payment Integration**: Ready-to-use payment page layout for checkout experiences.
+- **Cinematic Visuals**: immersive hero sections with glassmorphism and premium typography.
+- **Curated Menu**: A categorized culinary archive with smooth filtering and scroll-sync navigation.
+- **Atmospheric Gallery**: Interactive "Ambiance" displays using smooth scaling and hover effects.
+- **Performance First**: Built with Vite and React for lightning-fast transitions.
+- **Motion Design**: Sophisticated entry animations and scroll-triggered reveals powered by GSAP.
+- **Fully Responsive**: A seamless experience tailored for everything from mobile devices to ultra-wide displays.
+- **Reservation System**: Integrated contact and booking calls-to-action throughout the journey.
+- **Payment Integration**: Ready-to-use payment page layout for checkout experiences.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18
 - **Styling**: Tailwind CSS & SCSS
@@ -36,7 +35,7 @@
 - **Build Tool**: Vite
 
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
 Fable Flavors uses the **Pearl & Indigo** palette:
 - **Primary Background**: `#F8F6F1` (Off-white Pearl)
